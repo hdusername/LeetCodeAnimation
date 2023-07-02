@@ -66,6 +66,23 @@ var climbStairs = function(n) {
 }
 ```
 
+```java
+/**
+ * java描述
+ */
+class Solution {
+    public int climbStairs(int n) {
+        if(n==1){
+            return 1;
+        }
+        if(n==2){
+            return 2;
+        }
+        return climbStairs(n-1)+climbStairs(n-2);
+    }
+}
+```
+
 #### 复杂度分析
 
 - 时间复杂度：`O(n)`，单循环到 n。
@@ -91,6 +108,56 @@ var climbStairs = function(n) {
        second = third;
     }
     return second;
+}
+```
+
+```java
+/**
+ * java描述 第一种解法，以Map作为缓存
+ */
+class Solution {
+    Map<Integer, Integer> cacheMap = new HashMap();
+    public int climbStairs(int n) {
+        if(n==1){
+            return 1;
+        }
+        if(n==2){
+            return 2;
+        }
+        Integer result = cacheMap.get(n);
+        if(result!=null){
+            return result;
+        }else{
+            int currResult = climbStairs(n-1)+climbStairs(n-2);
+            cacheMap.put(n, currResult);
+            return currResult;
+        }
+    }
+}
+```
+
+```java
+/**
+ * java描述 第二种解法，自底向上相加
+ */
+class Solution {
+    public int climbStairs(int n) {
+        if(n==1){
+            return 1;
+        }
+        if(n==2){
+            return 2;
+        }
+        int prepre = 1;
+        int pre = 2;
+        int count = 0;
+        for(int i = 3; i<=n; ++i){
+            count = pre + prepre;
+            prepre = pre;
+            pre = count;
+        }
+        return count;
+    }
 }
 ```
 
