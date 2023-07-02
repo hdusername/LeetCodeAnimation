@@ -1,10 +1,5 @@
 # LeetCode 第 1 号问题：两数之和
 
-> 本文首发于公众号「图解面试算法」，是 [图解 LeetCode ](<https://github.com/MisterBooo/LeetCodeAnimation>) 系列文章之一。
->
-> 同步博客：https://www.algomooc.com
->
-
 题目来源于 LeetCode 上第 1 号问题：两数之和。题目难度为 Easy，目前通过率为 45.8% 。
 
 ### 题目描述
@@ -37,65 +32,6 @@
 ![](../Animation/Animation.gif)
 
 ### 代码实现
-#### C++
-```
-// 1. Two Sum
-// https://leetcode.com/problems/two-sum/description/
-// 时间复杂度：O(n)
-// 空间复杂度：O(n)
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int,int> record;
-        for(int i = 0 ; i < nums.size() ; i ++){
-       
-            int complement = target - nums[i];
-            if(record.find(complement) != record.end()){
-                int res[] = {i, record[complement]};
-                return vector<int>(res, res + 2);
-            }
-
-            record[nums[i]] = i;
-        }
-        return {};
-    }
-};
-
-```
-#### C
-```c
-// 1. Two Sum
-// https://leetcode.com/problems/two-sum/description/
-// 时间复杂度：O(n)
-// 空间复杂度：O(n)
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
-    int *ans=(int *)malloc(2 * sizeof(int));
-    int i,j;
-    bool flag=false; 
-    for(i=0;i<numsSize-1;i++)
-    {
-        for(j=i+1;j<numsSize;j++)
-        {
-            if(nums[i]+nums[j] == target)
-            {
-                ans[0]=i;
-                ans[1]=j;
-                flag=true;
-            }
-        }
-    }
-    if(flag){
-        *returnSize = 2;
-    }
-    else{
-        *returnSize = 0;
-    }
-    return ans;
-}
-```
 #### Java
 ```
 // 1. Two Sum
@@ -124,25 +60,3 @@ class Solution {
     }
 }
 ```
-#### Python
-```
-# 1. Two Sum
-# https://leetcode.com/problems/two-sum/description/
-# 时间复杂度：O(n)
-# 空间复杂度：O(n)
-class Solution(object):
-    def twoSum(self, nums, target):
-        l = len(nums)
-        print(nums)
-        ans=[]
-        for i in range(l-1):
-            for j in range(i+1,l):
-                if nums[i]+nums[j] == target:
-                    ans.append(i)
-                    ans.append(j)
-                    print([i,j])
-                    break
-        return ans
-  ```      
-
-![](../../Pictures/qrcode.jpg)
