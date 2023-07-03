@@ -60,30 +60,19 @@ class Solution {
 ### 优化解法
 
 ```java
-// 1. Two Sum
-// https://leetcode.com/problems/two-sum/description/
-// 时间复杂度：O(n)
-// 空间复杂度：O(n)
-//java实现
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int l = nums.length;
-        int[] ans=new int[2];
-        int i,j;
-        for(i=0;i<l-1;i++)
-        {
-            for(j=i+1;j<l;j++)
-            {
-                if(nums[i]+nums[j] == target)
-                {
-                    ans[0]=i;
-                    ans[1]=j;
-                }
+        Map<Integer, Integer> hashtable = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            if (hashtable.containsKey(target - nums[i])) {
+                return new int[]{hashtable.get(target - nums[i]), i};
             }
+            hashtable.put(nums[i], i);
         }
-        
-        return ans;
-        
+        return new int[0];
     }
 }
 ```
+#### 复杂度分析
+- 时间复杂度：`O(n)`，这里的n为数组的长度。
+- 空间复杂度：`O(n)`，其中N是数组中的元素数量。主要为哈希表的开销。
