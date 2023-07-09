@@ -6,9 +6,9 @@
 
 给定一个字符串，请你找出其中不含有重复字符的 **最长子串** 的长度。
 
-**示例 1:**
+**示例：**
 
-```java
+```
 输入: "abcabcbb"
 输出: 3 
 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
@@ -31,30 +31,35 @@
 
 ## 代码实现
 
-```c++
-// 滑动窗口
-// 时间复杂度: O(len(s))
-// 空间复杂度: O(len(charset))
+```java
+/**
+ * 使用滑动窗口来解决这个问题
+ */
 class Solution {
-public:
-    int lengthOfLongestSubstring(string s) {
-        int freq[256] = {0};
-        int l = 0, r = -1; //滑动窗口为s[l...r]
-        int res = 0;
-        // 整个循环从 l == 0; r == -1 这个空窗口开始
-        // 到l == s.size(); r == s.size()-1 这个空窗口截止
-        // 在每次循环里逐渐改变窗口, 维护freq, 并记录当前窗口中是否找到了一个新的最优值
-        while(l < s.size()){
-            if(r + 1 < s.size() && freq[s[r+1]] == 0){
-                r++;
-                freq[s[r]]++;
-            }else {   //r已经到头 || freq[s[r+1]] == 1
-                freq[s[l]]--;
-                l++;
+    public int lengthOfLongestSubstring(String s) {
+        // 哈希集合，记录每个字符是否出现过
+        Set<Character> occ = new HashSet<Character>();
+        int n = s.length();
+        // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
+        int rk = -1, ans = 0;
+        for (int i = 0; i < n; ++i) {
+            if (i != 0) {
+                // 左指针向右移动一格，移除一个字符
+                occ.remove(s.charAt(i - 1));
             }
-            res = max(res, r-l+1);
+            while (rk + 1 < n && !occ.contains(s.charAt(rk + 1))) {
+                // 不断地移动右指针
+                occ.add(s.charAt(rk + 1));
+                ++rk;
+            }
+            // 第 i 到 rk 个字符是一个极长的无重复字符子串
+            ans = Math.max(ans, rk - i + 1);
         }
-        return res;
+        return ans;
     }
-};
+}
 ```
+
+### 复杂度分析
+- 时间复杂度： `O(N)`，其中N是字符串的长度。左指针和右指针分别会遍历整个字符串一次。
+- 空间复杂度： `O(∣Σ∣)`，其中Σ表示字符集（即字符串中可以出现的字符），∣Σ∣ 表示字符集的大小。在本题中没有明确说明字符集，因此可以默认为所有 ASCII 码在[0 , 128)
