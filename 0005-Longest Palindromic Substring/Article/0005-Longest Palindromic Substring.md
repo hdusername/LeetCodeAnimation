@@ -1,10 +1,5 @@
 # LeetCode 第 5 号问题：最长回文串
 
-> 本文首发于公众号「图解面试算法」，是 [图解 LeetCode ](<https://github.com/MisterBooo/LeetCodeAnimation>) 系列文章之一。
->
-> 同步博客：https://www.algomooc.com
->
-
 题目来源于 LeetCode 上第 5 号问题：最长回文串。题目难度为 Medium，目前通过率为 29% 。
 
 ## 题目描述
@@ -78,11 +73,11 @@ class Solution:
 
 最后我们来看下算法的复杂度，为什么这是一个O(n)的算法呢？原因很简单，我们只需要关注mr这个变量即可。mr这个变量是递增的，mr每次递增的大小，其实就是p[i] - (mr - i)的长度。所以虽然看似我们用了两重循环，但是由于mr最多只能递增n次，所以它依然是O(n)的算法。
 
-#### 动画描述
+## 动画描述
 
 ![](../Animation/LeetCode5.gif)
 
-#### 代码实现
+## 代码实现
 
 ```python
 class Solution:
@@ -119,5 +114,3 @@ class Solution:
         return ''.join(filter(lambda x: x != '#', list(palindromic)))
         
 ```
-
-![](../../Pictures/qrcode.jpg)
