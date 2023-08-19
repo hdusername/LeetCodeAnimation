@@ -55,6 +55,7 @@ class Solution {
 
         //这里呼应了上面nums1.length>nums2.length就交换数组的做法，为了先从第一个数组中寻找分割线位置，再找到第二个数组的分割线位置
         //右边界值为m表示第一个数组分割线左侧为数组全部元素，右侧无值
+        //这里的left和right表示分割线左右两侧元素个数
         int left = 0;
         int right = m;
 
@@ -74,6 +75,7 @@ class Solution {
                 right = i-1;
             }else {
                 //下一轮搜索区间[i,right]
+                //只要进入这个分支，就说明找到了满足条件的left值，这个left值就不会变，除非再次进入这个分支
                 left = i;
             }
         }
