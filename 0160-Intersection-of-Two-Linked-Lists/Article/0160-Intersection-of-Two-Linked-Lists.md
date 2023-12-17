@@ -42,7 +42,7 @@ pB按新拼接的链表{6,3,4,1,2,3,4}遍历
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class Solution35 {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         ListNode *pA = headA;

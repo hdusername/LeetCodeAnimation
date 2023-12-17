@@ -67,7 +67,7 @@ int singleNumber(int* nums, int numsSize){
 
 #### C++
 ````c++
-class Solution {
+class Solution35 {
 public:
     int singleNumber(vector<int>& nums) {
         int res=0;
@@ -83,7 +83,7 @@ public:
 
 #### Java
 ````java
-class Solution {
+class Solution35 {
     public int singleNumber(int[] nums) {
         int res = 0;
         for(int n:nums)
@@ -98,7 +98,7 @@ class Solution {
 
 #### pyton
 ````python
-class Solution(object):
+class Solution35(object):
     def singleNumber(self, nums):
         return reduce(lambda x,y:x^y, nums)
 # reduce用法举例

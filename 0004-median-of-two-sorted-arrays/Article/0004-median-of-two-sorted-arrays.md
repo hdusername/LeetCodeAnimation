@@ -39,11 +39,11 @@ nums2 = [3, 4]
  * 本题中要求算法的时间复杂度为 O(log(m + n))
  * 说明要使用二分查找法
  */
-class Solution {
+class Solution35 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if(nums1.length>nums2.length){
             //这一步是为了让第一个数组的长度短，为了保证分割线两边都有元素，找分割线时开始是找的长度短的数组之间做分割线，
-            // 以此避免分割线划到数组短的数组之外，造成数组越界
+            //这样可以保证在长的数组中分割线左右两侧都有数据 以此避免长数组的数组越界异常
             int[] tmpArr = nums1;
             nums1 = nums2;
             nums2 = tmpArr;
@@ -53,9 +53,9 @@ class Solution {
         //两个数组分割线左面元素个数
         int totalSize = (m+n+1)/2;
 
-        //这里呼应了上面nums1.length>nums2.length就交换数组的做法，为了先从第一个数组中寻找分割线位置，再找到第二个数组的分割线位置
-        //右边界值为m表示第一个数组分割线左侧为数组全部元素，右侧无值
-        //这里的left和right表示分割线左右两侧元素个数
+        //这里呼应了上面nums1.length>nums2.length就交换数组的做法，第一个短数组的取值范围就是[0,m]闭区间，也就是说第一个数组会有分割线左侧或右侧没有元素的情况
+        //右侧值为m表示第一个数组分割线左侧为数组全部元素，右侧无值，可以根据while循环中的i和j理解
+        //这里的left和right表示第一个数组的分割线右侧元素的角标，用left和right就是为了确定这个角标
         int left = 0;
         int right = m;
 
@@ -75,7 +75,7 @@ class Solution {
                 right = i-1;
             }else {
                 //下一轮搜索区间[i,right]
-                //只要进入这个分支，就说明找到了满足条件的left值，这个left值就不会变，除非再次进入这个分支
+                //只要进入这个分支，就说明找到了满足条件的left值，这个left值就不会变，在下面就赋值了，除非再次进入这个分支
                 left = i;
             }
         }

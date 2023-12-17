@@ -35,7 +35,7 @@
 /**
  * 使用滑动窗口来解决这个问题
  */
-class Solution {
+class Solution35 {
     public int lengthOfLongestSubstring(String s) {
         // 哈希集合，记录每个字符是否出现过
         Set<Character> occ = new HashSet<Character>();

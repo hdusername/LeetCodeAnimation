@@ -30,9 +30,10 @@
 
 ### 第一种解法
 ```java
-class Solution {
+class Solution35 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
+        //找一个指针指向头节点，便于操作，最后还可以返回dummyHead这一整个链表
         ListNode cur = dummyHead;
         int carry = 0;
 
@@ -65,7 +66,7 @@ class Solution {
 
 ### 第二种解法
 ```java
-class Solution {
+class Solution35 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;
         int carry = 0;

@@ -50,7 +50,7 @@
 Java语言
 
 ```java
-class Solution {
+class Solution35 {
     public boolean wordPattern(String pattern, String str) {
         HashMap<Character, String> map = new HashMap<>();
         HashSet<String> set = new HashSet<>();

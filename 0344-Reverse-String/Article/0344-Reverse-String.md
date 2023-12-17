@@ -39,7 +39,7 @@
 ### 代码实现
 
 ```
-class Solution {
+class Solution35 {
 public:
     string reverseString(string s) {
         int i = 0, j = s.size() - 1;

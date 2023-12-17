@@ -69,7 +69,7 @@
 ### 参考代码
 
 ```java
-class Solution {
+class Solution35 {
     public List<Integer> topKFrequent(int[] nums, int k) {
         // 使用字典，统计每个元素出现的次数，元素为键，元素出现的次数为值
         HashMap<Integer,Integer> map = new HashMap();
@@ -123,7 +123,7 @@ class Solution {
 
 ```java
 //基于桶排序求解「前 K 个高频元素」
-class Solution {
+class Solution35 {
     public List<Integer> topKFrequent(int[] nums, int k) {
         List<Integer> res = new ArrayList();
         // 使用字典，统计每个元素出现的次数，元素为键，元素出现的次数为值

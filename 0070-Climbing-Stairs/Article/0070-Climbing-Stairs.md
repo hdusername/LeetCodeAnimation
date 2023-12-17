@@ -52,7 +52,7 @@
 /**
  * java描述
  */
-class Solution {
+class Solution35 {
     public int climbStairs(int n) {
         if(n==1){
             return 1;
@@ -78,7 +78,7 @@ class Solution {
 /**
  * java描述 第一种解法，以Map作为缓存
  */
-class Solution {
+class Solution35 {
     Map<Integer, Integer> cacheMap = new HashMap();
     public int climbStairs(int n) {
         if(n==1){
@@ -103,7 +103,7 @@ class Solution {
 /**
  * java描述 第二种解法，自底向上相加
  */
-class Solution {
+class Solution35 {
     public int climbStairs(int n) {
         if(n==1){
             return 1;

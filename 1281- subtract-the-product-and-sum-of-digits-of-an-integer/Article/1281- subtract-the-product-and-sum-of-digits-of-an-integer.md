@@ -45,7 +45,7 @@
 ### 参考代码
 
 ```java
-class Solution {
+class Solution35 {
     public int subtractProductAndSum(int n) {
         int addResult = 0, mulResult = 1;
         while (n > 0) {

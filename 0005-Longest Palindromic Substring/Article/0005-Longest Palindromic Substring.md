@@ -32,7 +32,7 @@ Output: "bb"
 我们写出代码：
 
 ```python
-class Solution:
+class Solution35:
     def longestPalindrome(self, s: str) -> str:
         n = len(s)
         
@@ -80,7 +80,7 @@ class Solution:
 ## 代码实现
 
 ```python
-class Solution:
+class Solution35:
     
     def longestPalindrome(self, s: str) -> str:
         # 在所有字符中间插入#

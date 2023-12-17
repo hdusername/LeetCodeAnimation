@@ -72,7 +72,7 @@
 ### 代码实现
 
 ```
-class Solution {
+class Solution35 {
 public:
     bool isValid(string s) {
 

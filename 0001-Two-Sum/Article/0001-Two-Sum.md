@@ -39,7 +39,7 @@
 /**
  * java实现
  */
-class Solution {
+class Solution35 {
     public int[] twoSum(int[] nums, int target) {
         int length = nums.length;
         for(int i=0;i<length-1;i++){
@@ -60,7 +60,7 @@ class Solution {
 ### 优化解法
 
 ```java
-class Solution {
+class Solution35 {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> hashtable = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; ++i) {

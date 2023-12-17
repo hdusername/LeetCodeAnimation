@@ -49,7 +49,7 @@
 ### 代码实现
 #### C++
 ```c++
-class Solution {
+class Solution35 {
 public:
     int singleNumber(vector<int>& nums) {
         int one=0, two=0;
@@ -64,7 +64,7 @@ public:
 ```
 #### Java
 ```java
-class Solution {
+class Solution35 {
     public int singleNumber(int[] nums) {
         int one=0, two=0;
         for(int n:nums)
@@ -78,7 +78,7 @@ class Solution {
 ```
 #### Python
 ```python
-class Solution(object):
+class Solution35(object):
     def singleNumber(self, nums):
         one = two = 0
         for n in nums:

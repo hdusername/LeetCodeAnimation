@@ -49,7 +49,7 @@
 ### 代码实现
 
 ```java
-class Solution {
+class Solution35 {
     public void rotate(int[] nums, int k) {
         if (nums.length < k) {
             k %= nums.length;

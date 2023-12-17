@@ -70,7 +70,7 @@ HammingDistance(14, 2) = 1 1 0 0
 ### 参考代码
 
 ```java
-class Solution {
+class Solution35 {
     public int totalHammingDistance(int[] nums) {
         int len=nums.length;
         int[] bitCount = new int[32];

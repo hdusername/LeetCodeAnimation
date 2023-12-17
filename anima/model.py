@@ -14,13 +14,13 @@ class ProblemInfo:
 
 
 @dataclass
-class Solution:
+class Solution35:
     problem: ProblemInfo
     path: Path
 
     @classmethod
     def create(cls, problem: ProblemInfo, path: Path):
-        solution = Solution(problem, path)
+        solution = Solution35(problem, path)
         solution._create_dirs()
         return solution
 

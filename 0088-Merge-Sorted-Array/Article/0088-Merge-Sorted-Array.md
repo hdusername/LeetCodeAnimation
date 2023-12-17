@@ -80,7 +80,7 @@ nums2 = [2,5,6],       n = 3
 C++ Code:
 
 ```c++
-class Solution {
+class Solution35 {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         int i=m-1, j=n-1, k=m+n-1;
@@ -108,7 +108,7 @@ public:
 Java Code:
 
 ```java
-class Solution {
+class Solution35 {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i=m-1, j=n-1, k=m+n-1;
         // 合并
@@ -135,7 +135,7 @@ class Solution {
 Python Code:
 
 ```python
-class Solution(object):
+class Solution35(object):
     def merge(self, nums1, m, nums2, n):
         """
         :type nums1: List[int]

@@ -35,7 +35,7 @@
 #### 代码实现
 
 ```java
-class Solution {
+class Solution35 {
     public String decodeString(String s) {
         StringBuilder res = new StringBuilder();
         int multi = 0;

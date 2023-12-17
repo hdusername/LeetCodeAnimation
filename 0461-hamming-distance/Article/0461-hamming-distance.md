@@ -145,7 +145,7 @@
 ### 参考代码
 
 ```java
-class Solution {
+class Solution35 {
     public int hammingDistance(int x, int y) {
         return Integer.bitCount(x ^ y); 
     }

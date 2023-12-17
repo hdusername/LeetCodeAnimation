@@ -65,7 +65,7 @@
 
 ```java
 //author:程序员小吴
-public class Solution {
+public class Solution35 {
     public boolean hasCycle(ListNode head) {
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {

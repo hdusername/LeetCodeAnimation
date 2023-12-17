@@ -45,7 +45,7 @@
 // 对撞指针
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
-class Solution {
+class Solution35 {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
         int n = numbers.size();
@@ -72,7 +72,7 @@ public:
 ```
 #### Java
 ```java
-class Solution {
+class Solution35 {
     public int[] twoSum(int[] numbers, int target) {
         int n = numbers.length;
         int left = 0;
@@ -99,7 +99,7 @@ class Solution {
 ```
 #### Python
 ```python
-class Solution(object):
+class Solution35(object):
     def twoSum(self, numbers, target):
         n = len(numbers)
         left,right = 0, n-1

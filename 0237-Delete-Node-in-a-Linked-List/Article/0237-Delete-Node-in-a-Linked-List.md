@@ -54,7 +54,7 @@
 ### 代码实现
 
 ```
-class Solution {
+class Solution35 {
 public:
     void deleteNode(ListNode* node) {
         if (node == NULL) return;

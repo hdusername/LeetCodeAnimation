@@ -39,7 +39,7 @@
 ```
 // 时间复杂度: O(n)
 // 空间复杂度: O(n)
-class Solution {
+class Solution35 {
 public:
     void moveZeroes(vector<int>& nums) {
 
@@ -76,7 +76,7 @@ public:
 // 原地(in place)解决该问题
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
-class Solution {
+class Solution35 {
 public:
     void moveZeroes(vector<int>& nums) {
 
@@ -108,7 +108,7 @@ public:
 // 原地(in place)解决该问题
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
-class Solution {
+class Solution35 {
 public:
     void moveZeroes(vector<int>& nums) {
 

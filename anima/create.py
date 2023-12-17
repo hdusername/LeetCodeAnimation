@@ -1,7 +1,7 @@
 import shutil
 
 from anima.base import get_project_path, get_md_template_path
-from anima.model import ProblemInfo, Solution
+from anima.model import ProblemInfo, Solution35
 
 
 def create_solution(problem_id: int, problem_title: str) -> None:
@@ -13,7 +13,7 @@ def create_solution(problem_id: int, problem_title: str) -> None:
         exit(1)
     solution_dir.mkdir()
 
-    solution = Solution.create(problem, solution_dir)
+    solution = Solution35.create(problem, solution_dir)
 
     template = get_md_template_path()
     shutil.copy(template, solution.doc_path())

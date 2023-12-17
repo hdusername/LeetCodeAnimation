@@ -38,7 +38,7 @@
 ### 代码实现
 
 ```python
-class Solution:
+class Solution35:
     def addTwoNumbers(self, l1, l2):
         # 分别入栈
         stack1 = []
