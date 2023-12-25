@@ -39,7 +39,9 @@ public class Solution35 {
             }
         }
         // 2.目标值在数组所有元素之前 3.目标值插入数组中 4.目标值在数组所有元素之后 return right + 1;
-        //这里写high+1或者low都可以
+        //这里写high+1或者low都可以，因为最后搜索到low=high时，如果nums[mid] /nums[low]/nums[high]（这三个是一个值）> target,nums[mid]值在target右面，那么high向左移动成为新的high值后不满足low<=high
+        //所以插入的位置为high+1，如果nums[mid] /nums[low]/nums[high]（这三个是一个值）<target,那么low向右移动成为新的low值后不满足low<=high，插入的位置应该是新的low的位置，因为
+        //target的值在low=high时还没找到，nums[mid]值在target左面
         return high + 1;
     }
 }
