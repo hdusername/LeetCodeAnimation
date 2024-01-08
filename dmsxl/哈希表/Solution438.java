@@ -9,7 +9,7 @@ import java.util.List;
 public class Solution438 {
 
     public static void main(String[] args) {
-        findAnagrams("aaab","bbba");
+        findAnagrams("aaabbac","ba");
     }
 
     public static List<Integer> findAnagrams(String s, String p) {
@@ -30,7 +30,7 @@ public class Solution438 {
             ++count[s.charAt(i)-'a'];
             --count[p.charAt(i)-'a'];
         }
-        //表示字母差异个数
+        //表示字母差异个数，也就是s串和p串相互差了几个字母类型，diff表示s串窗口内和p串字母差异个数，窗口变化，diff也随着变化
         int differ = 0;
         for(int j = 0; j < 26; j++){
             if(count[j]!=0)++differ;
@@ -55,11 +55,11 @@ public class Solution438 {
 
 
             //左缩减一位，i
-            if (count[s.charAt(i) - 'a'] == 1) {
+            if (count[s.charAt(i) - 'a'] == 1) {//说明s比p多了一个i这个位置的字母，现在要向左移去掉这个字母，不同的字母类型就会减少1个
                 //窗口中s子串左边减少一个s[i]的数量(把原来多出来的1个s[i]去掉，变得相同)
                 //两个字符串字母差距缩小
                 --differ;
-            } else if (count[s.charAt(i) - 'a'] == 0) {
+            } else if (count[s.charAt(i) - 'a'] == 0) {//说明s和p在i这个位置的字母数量相同，现在要向左移去掉这个字母，不同的字母类型就会增加1个
                 //窗口中s子串左边减少一个s[i]的数量(把原来相同数量的s[i]的减少了1个，数量变得不相同)
                 //两个字符串字母差距增大
                 ++differ;
@@ -69,7 +69,7 @@ public class Solution438 {
 
             //添加时只考虑count[x]==-1与count[x]==0的情况，原因分析与缩减时类似
             //右添加一位，i+pLen
-            if (count[s.charAt(i + pLen) - 'a'] == -1) {
+            if (count[s.charAt(i + pLen) - 'a'] == -1) {//说明s比p少了一个i这个位置的字母，现在要向右增加这个字母，不同的字母类型就会减少1个
                 //窗口中s子串右边增加一个s[i+pLen]的数量(把原来缺少的1个s[i]加上，数量变得相同)
                 //两个字符串字母差距缩小
                 --differ;
