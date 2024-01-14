@@ -36,6 +36,9 @@ public class Solution904 {
                     left++;
                 }
             }
+            //这里为什么用right-left+1
+            //因为在for循环时就会一直走到这个代码，最符合条件的就是第二种类型的最后一个字母的索引值减去第一种类型的第一个字母的索引值，水果个数就是right-left+1
+            //如果right走到了第三种类型，会进入上面的while循环中，直到left走到第二种类型的第一个值
             ans = Math.max(right-left+1, ans);
         }
 
