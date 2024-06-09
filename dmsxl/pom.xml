@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>shuzu</module>
+        <module>dandiaozhan</module>
     </modules>
 
 
