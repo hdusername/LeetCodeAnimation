@@ -41,6 +41,8 @@ import java.util.StringJoiner;
  *
  * 输出享受优惠后的一组数据，每个值表示客户选择第 i 盘寿司时实际得到的寿司的总价格。使用空格进行分隔，例如：
  * 3 21 9 17
+ *
+ * 本题目解题思路可以看代码随想录关于单调栈的解题思路
  */
 public class 转盘寿司 {
     public static void main(String[] args) {
