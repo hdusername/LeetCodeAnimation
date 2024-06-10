@@ -1,3 +1,6 @@
+import java.io.Serializable;
+import java.util.Scanner;
+
 /**
  * https://fcqian.blog.csdn.net/article/details/127914382
  *
@@ -13,5 +16,26 @@
 public class 找座位 {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+
+        String arrStr = scanner.nextLine();
+
+        char[] charArray = arrStr.toCharArray();
+
+        int extraSit = 0;
+
+        for(int i=0;i<charArray.length;i++){
+            if(charArray[i]=='0') {
+                boolean left = i==0||charArray[i-1]=='0';
+                boolean right = i==charArray.length-1||charArray[i+1]=='0';
+
+                if(left && right){
+                    extraSit++;
+                    charArray[i]='1';
+                    i++;
+                }
+            }
+        }
+        System.out.println(extraSit);
     }
 }
