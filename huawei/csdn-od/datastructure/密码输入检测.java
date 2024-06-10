@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * https://fcqian.blog.csdn.net/article/details/127914382
  *
@@ -15,5 +17,51 @@ public class 密码输入检测 {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        String passwordStr = scanner.nextLine();
+        int length = passwordStr.length();
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 0; i<length; i++){
+            if(passwordStr.charAt(i) !='<'){
+                stringBuilder.append(passwordStr.charAt(i));
+            }else {
+                if(stringBuilder.length()!=0) {
+                    stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                }
+            }
+        }
+
+        boolean lengthFlag = false;
+        boolean lowFlag = false;
+        boolean upperFlag = false;
+        boolean num =false;
+        boolean specChar =false;
+        if(stringBuilder.length()>=8){
+            lengthFlag=true;
+        }
+        char[] charArray = stringBuilder.toString().toCharArray();
+        for (char c : charArray) {
+            if('a'<=c && c<='z'){
+                lowFlag=true;
+                continue;
+            }
+            if('A'<=c && c<='Z'){
+                upperFlag=true;
+                continue;
+            }
+            if('0'<=c && c<='9'){
+                num=true;
+                continue;
+            }
+
+            specChar=true;
+        }
+
+        if(lengthFlag && lowFlag && upperFlag && num && specChar){
+            stringBuilder.append(",true");
+        }else {
+            stringBuilder.append(",false");
+        }
+        System.out.println(stringBuilder.toString());
     }
 }
