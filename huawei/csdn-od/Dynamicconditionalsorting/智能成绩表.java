@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 /**
  * 小明来到某学校当老师，需要将学生按考试总分或单科分数进行排名，你能帮帮他吗？
  *
@@ -18,4 +21,63 @@
  * 输出一行，按成绩排序后的学生名字，空格隔开。成绩相同的按照学生姓名字典顺序排序。
  */
 public class 智能成绩表 {
+    static class Student{
+        private String name;
+        private int[] score;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //学生总数
+        int n = scanner.nextInt();
+        //科目总数
+        int m = scanner.nextInt();
+
+        //每个人的总分数
+        int totalRecord = 0;
+
+        List<Student> studentList = new ArrayList<>();
+
+        HashMap<String, Integer> map = new HashMap<>();
+        //获取所有科目
+       // String subjectStr = scanner.nextLine();
+        //String[] subjects = subjectStr.split(" ");
+        for(int i =0;i<m;i++){
+            map.put(scanner.next(),i);
+        }
+
+        for(int i=0;i<n;i++){
+            Student student = new Student();
+
+            //不仅放科目成绩，为了把总成绩也放到数组中，定义长度为m+1
+            int[] sujectInt = new int[m + 1];
+
+            student.name = scanner.next();
+
+            for(int j=0;j<m;j++){
+                sujectInt[j]=scanner.nextInt();
+                totalRecord+=sujectInt[j];
+            }
+            sujectInt[m]=totalRecord;
+            student.score=sujectInt;
+            studentList.add(student);
+            totalRecord=0;
+
+        }
+
+        String outSubject = scanner.next();
+
+        Integer index = map.getOrDefault(outSubject, m);
+
+        studentList.sort((a,b)->
+            a.score[index]==b.score[index]?a.name.compareTo(b.name):b.score[index]-a.score[index]
+        );
+
+        StringJoiner stringJoiner = new StringJoiner(" ");
+        for(Student student : studentList){
+            stringJoiner.add(student.name+"");
+        }
+
+        System.out.println(stringJoiner);
+    }
 }
