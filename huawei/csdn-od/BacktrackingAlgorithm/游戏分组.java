@@ -46,7 +46,7 @@ public class 游戏分组 {
             resultSumList.add(sum);
             return;
         }
-        for(int i=startIndex;i<10-(5-level)+1;i++){
+        for(int i=startIndex;i<10;i++){
             if(i>startIndex && scores[i]==scores[i-1]){
                 //与上面的排序一起用的，如果值相同的话没有必要再进行递归了，因为递归的结果和上一次一样，也就是i和i-1得到的结果一样
                 continue;
