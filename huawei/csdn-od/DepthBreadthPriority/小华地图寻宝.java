@@ -43,6 +43,7 @@ public class 小华地图寻宝 {
 
         //深度优先算法
         deepFirst();
+        //breadthFirst();
     }
 
     private static void deepFirst() {
