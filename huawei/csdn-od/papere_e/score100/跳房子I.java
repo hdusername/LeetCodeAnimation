@@ -43,6 +43,8 @@ public class 跳房子I {
 //                stringJoiner.add(needCount+"");
 //                stringJoiner.add(arrays[i]+"");
                 //这里找到了符合条件的值，索引的和也不一定是最小的，所以不能退出，要找完所有符合条件的值后排序找最小
+                //[1,1000,1000,1000,1000,1000,1000,3,2,4]
+                //5
                 objects.clear();
                 objects.add(needCount);
                 objects.add(arrays[i]);
