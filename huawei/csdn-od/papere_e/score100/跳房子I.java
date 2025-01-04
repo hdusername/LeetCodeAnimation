@@ -33,15 +33,13 @@ public class 跳房子I {
         int count = Integer.parseInt(scanner.nextLine());
         Map<Integer,Integer> map = new HashMap<>();
 
-        //StringJoiner stringJoiner = new StringJoiner(" ,");
         ArrayList<Integer> objects = new ArrayList<>();
 
         int minIndex = Integer.MAX_VALUE;
         for(int i=0;i<arrays.length;i++){
             int needCount = count-arrays[i];
             if(map.get(needCount) != null && minIndex>map.get(needCount)+i){
-//                stringJoiner.add(needCount+"");
-//                stringJoiner.add(arrays[i]+"");
+
                 //这里找到了符合条件的值，索引的和也不一定是最小的，所以不能退出，要找完所有符合条件的值后排序找最小
                 //[1,1000,1000,1000,1000,1000,1000,3,2,4]
                 //5
@@ -55,6 +53,8 @@ public class 跳房子I {
             if(map.get(arrays[i])==null) {
                 //为了保证map里面放的是最小索引，因为数组中的数字是有可能重复的，这个put不在if判断中的话会导致相同的数字后面出现的会覆盖前面出现的
                 map.put(arrays[i], i);
+                //用下面这个代码也可以实现上述效果
+                //map.putIfAbsent(arrays[i],i);
             }
 
         }
