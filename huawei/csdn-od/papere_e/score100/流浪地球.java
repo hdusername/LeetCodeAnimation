@@ -32,7 +32,7 @@ public class 流浪地球 {
 
 
         Scanner scanner = new Scanner(System.in);
-        //int[] mechInput1s = Arrays.asList(scanner.nextLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();
+        int[] mechInput1s = Arrays.asList(scanner.nextLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();
 
         int mechNum = scanner.nextInt();
 
