@@ -14,6 +14,10 @@ import java.util.Scanner;
  */
 public class 恢复数字序列 {
 
+    /**
+     * 关联子串不能用下面这种方式，因为这种方式可以把数字的多少保存在数组中，而数字一共就10个，可以使用此方式，关联子串可以使用最小覆盖子串的思路
+     * @param args
+     */
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
