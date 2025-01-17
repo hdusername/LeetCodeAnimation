@@ -23,7 +23,8 @@ public class 最左侧冗余覆盖子串 {
             targetNums[targetStr.charAt(i)]++;
         }
 
-        out: for(int j=0; j<sourceStr.length()-(k+targetStr.length()); j++){
+        //这里用等于号比较准确，具体原因可参考《补种未成活胡杨》
+        out: for(int j=0; j<=sourceStr.length()-(k+targetStr.length()); j++){
             int[] tempTargetNums = Arrays.copyOf(targetNums, targetNums.length);
 
             String substring = sourceStr.substring(j, j + k+targetStr.length());
