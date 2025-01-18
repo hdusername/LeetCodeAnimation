@@ -17,15 +17,15 @@ public class 分割数组的最大差值 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int[] nums = new int[n];
+        long[] nums = new long[n];
         for(int i=0; i<n; i++){
-            nums[i] = scanner.nextInt();
+            nums[i] = scanner.nextLong();
         }
 
-        int maxDiff = 0;
+        long maxDiff = 0;
         //左侧数组元素的和初始化为0，右侧初始化为整个数组元素的和，从左向右遍历的过程中左边加，右边减，用这种方式可以方便的在循环中得到左右两侧数组元素的和
-        int leftSum = 0;
-        int rightSum = Arrays.stream(nums).sum();
+        long leftSum = 0;
+        long rightSum = Arrays.stream(nums).sum();
         //左侧数组最多到倒数第二个元素，因为左右侧数组不能为空，这里保证了右侧数组不能为空
         for(int i=0; i<n-1; i++){
             leftSum=leftSum+nums[i];
