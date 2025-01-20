@@ -56,6 +56,7 @@ public class 增强的strstr {
         out:for(int i=0;i<=sourceStr.length()-list.size();i++){
             int j=0;
             for(;j<list.size();j++){
+                //滑动窗口方式向后匹配
                 if(!list.get(j).contains(sourceStr.charAt(i+j))){
                     continue out;
                 }
