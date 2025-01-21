@@ -37,6 +37,7 @@ public class IPv4地址转换成整数 {
                 throw  new Exception("");
             }
 
+            //输入的ip中包含的数字不能是01，02这种形式的
             if((s0!=0&& split[0].startsWith("0")) || (s1!=0&& split[1].startsWith("0")) || (s2!=0&& split[2].startsWith("0")) || (s3!=0&& split[3].startsWith("0")) ){
                 throw  new Exception("");
             }
