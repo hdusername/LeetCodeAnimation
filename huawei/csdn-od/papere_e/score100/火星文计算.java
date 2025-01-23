@@ -64,6 +64,7 @@ public class 火星文计算 {
 
             int result = 4*x+3*y+2;
             s= s.replaceFirst(sourceStr, result+"");
+            //字符串遍历，需要重新进行正则匹配
             matcher = compile.matcher(s);
         }
         //计算带$的
