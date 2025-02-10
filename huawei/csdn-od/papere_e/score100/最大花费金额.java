@@ -64,7 +64,7 @@ public class 最大花费金额 {
         System.out.print(result==0?-1:result);
     }
 
-    //todo: 应该使用如下代码，这也是滑动串口的解法
+    //todo: 应该使用如下代码，这也是滑动窗口的解法
 
 //        public static int solution(int[] nums, int target) {
 //            // 题目说小明要购买三件，如果商品不足三件直接返回-1
