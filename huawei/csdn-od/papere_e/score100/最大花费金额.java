@@ -25,6 +25,7 @@ import java.util.Scanner;
  * 金额23、26和27相加得到76，而且最接近且小于输入金额78。
  */
 public class 最大花费金额 {
+    //这个逻辑不太对，使用下面的solution方法
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arrays = Arrays.stream(scanner.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
@@ -47,14 +48,10 @@ public class 最大花费金额 {
                 if (sum <= target) {
                     if (Math.abs(sum - target) < Math.abs(result - target)) {
                         result = sum;
-                       // start++;
 
                     }
                     middle++;
-//                    else {
-//                        start++;
-//                        middle++;
-//                    }
+
                 } else {
                    end--;
                    start--;
@@ -67,7 +64,7 @@ public class 最大花费金额 {
         System.out.print(result==0?-1:result);
     }
 
-    //todo: 应该使用如下代码
+    //todo: 应该使用如下代码，这也是滑动串口的解法
 
 //        public static int solution(int[] nums, int target) {
 //            // 题目说小明要购买三件，如果商品不足三件直接返回-1
