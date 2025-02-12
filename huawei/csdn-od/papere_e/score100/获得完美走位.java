@@ -80,6 +80,7 @@ public class 获得完美走位 {
                 //说明所有多出来的步都已经遍历到了，开始向右移动左指针
                 Character lc = s.charAt(l);
 
+                //说明从此刻开始遇到了改变diff的字符
                 if(map.get(lc)>=0){
                     diff++;
                 }
