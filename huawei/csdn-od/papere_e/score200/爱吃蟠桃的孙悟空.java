@@ -48,9 +48,9 @@ public class 爱吃蟠桃的孙悟空 {
 
             //桃的总数量
             //int treeSum = Arrays.stream(trees).sum();
-            //k的最小值是桃树中最少桃的数量
+            //k的最小值是1，表示一个小时只吃一个桃子，是最慢的速度
             //k的最大值是桃树中最多桃的数量
-            int lK = trees[0];
+            int lK = 1;
             int rK = trees[trees.length-1];
 
             while (lK<=rK){
