@@ -29,7 +29,7 @@ public class 喊7的次数重排 {
         //这个值是乱写的，很大，题目中说k不超过200，指的是fResults中的值不超过200，这里其实可以改为while循环
         for(int i=1; i<=10000; i++){
             if((i+"").contains("7") || i%7==0){
-
+                //只有满足条件才会进入这个判断，其余情况person会一直++的
                 ans[person]++;
             }
             if(++person>=fResults.length){
