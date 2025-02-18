@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -25,10 +26,35 @@ public class 数大雁 {
             count++;
         }
 
+        //count = find2(s);
         System.out.println(count==0?-1:count);
 
     }
 
+    //不能用这种方法，因为本题不是要求quack有几个，而是求的有几个鸭子
+//    public static int find2(String birdStr) {
+//
+//        HashMap<Character, Integer> indexes = new HashMap<>();
+//        for (int i = 0; i < "quack".length(); i++) {
+//            indexes.put(birdStr.charAt(i), i); // 不会存在重复字母
+//        }
+//
+//
+//        int[] count = new int[5];
+//        for (int i = 0; i < birdStr.length(); i++) {
+//            char c = birdStr.charAt(i);
+//
+//            if (indexes.containsKey(c)) {
+//                int idx = indexes.get(c);
+//                // 下面判断逻辑请看图解
+//                if (idx == 0 || count[idx] < count[idx - 1]) {
+//                    count[idx]++;
+//                }
+//            }
+//        }
+//
+//        return count[count.length - 1];
+//    }
     /**
      * 功能：一只大雁叫完一次，紧接着会叫下一次
      * @param charArray
