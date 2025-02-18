@@ -22,6 +22,10 @@ import java.util.Scanner;
  * 首次上报最多能获得的积分数
  */
 public class 日志采集系统 {
+    /**
+     * 这个题目实际上是前缀和的应用
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
