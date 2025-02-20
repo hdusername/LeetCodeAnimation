@@ -80,7 +80,7 @@ public class 字符串拼接 {
                 continue;
             }
 
-            //数层去重
+            //todo: 全排列比较重要的一步，数层去重
             if(i>0 && charArray[i]==charArray[i-1] && !isUsed[i-1]){
                 continue;
             }
