@@ -111,7 +111,8 @@ public class 跳马 {
 
             LinkedList<int[]> newQueue = new LinkedList<>();
 
-            //按层遍历，这是同一层数据
+            //todo: 按层遍历，这是同一层数据，这样做的好处是可以方便的统计步数，因为这一层都是走的同一步数，最后k--即可
+            //按层遍历和queue.pollFirst的执行逻辑一样，主要就是差在这个步数不太好统计上
             for(int[] poll : queue) {
                 int cx = poll[0];
                 int cy = poll[1];
