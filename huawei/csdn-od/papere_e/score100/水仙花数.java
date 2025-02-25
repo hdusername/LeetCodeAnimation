@@ -37,6 +37,7 @@ public class 水仙花数 {
         for(long i=min; i<max; i++){
             long pow = getPow(i, n);
             if(pow == i){
+                //为了记录到最后一个水仙花数
                 powNum = i;
                 count++;
             }
