@@ -67,13 +67,16 @@ public class 猜字谜 {
             ArrayList<String> ans = new ArrayList<>();
 
             for (String issue : issues) {
-                String s1 = getSortedAndDistinctStr(issue);
+                //有两种匹配方式，匹配上一种即可是谜底
+                String issue_distinc_str = getDistinctStr(issue);
+                String issue_sorted_str = getSortedStr(issue);
                 boolean isNotFind = true;
 
                 for (String answer : answers) {
-                    String s2 = getSortedAndDistinctStr(answer);
+                    String answer_distinc_str = getDistinctStr(answer);
+                    String answer_sorted_str = getSortedStr(answer);
 
-                    if (s1.equals(s2)) {
+                    if (issue_distinc_str.equals(answer_distinc_str) || issue_sorted_str.equals(answer_sorted_str)) {
                         ans.add(answer);
                         isNotFind = false;
                     }
@@ -87,10 +90,22 @@ public class 猜字谜 {
             System.out.println(String.join(",", ans));
         }
 
-        public static String getSortedAndDistinctStr(String s) {
-            TreeSet<Character> set = new TreeSet<>();
-            for (int i = 0; i < s.length(); i++) set.add(s.charAt(i));
-            return set.toString();
+        public static String getDistinctStr(String s) {
+            HashSet<Character> set = new HashSet<>();
+            StringBuffer stringBuffer = new StringBuffer();
+            for (int i = 0; i < s.length(); i++){
+                if(!set.contains(s.charAt(i))){
+                    stringBuffer.append(s.charAt(i));
+                    set.add(s.charAt(i));
+                }
+            }
+            return stringBuffer.toString();
+        }
+
+        public static String getSortedStr(String s) {
+            char[] charArray = s.toCharArray();
+            Arrays.sort(charArray);
+            return new String(charArray);
         }
 
 }
