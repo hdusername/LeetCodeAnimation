@@ -77,6 +77,7 @@ public class 猜字谜 {
                     String answer_sorted_str = getSortedStr(answer);
 
                     if (issue_distinc_str.equals(answer_distinc_str) || issue_sorted_str.equals(answer_sorted_str)) {
+                        //支持多个答案输出
                         ans.add(answer);
                         isNotFind = false;
                     }
