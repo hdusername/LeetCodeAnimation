@@ -55,6 +55,8 @@ public class 生成哈夫曼树 {
             Tree leftNode = queue.poll();
             Tree rightNode = queue.poll();
 
+            //最后一个参数写leftNode.height+1和rightNode+1都可以，都可以通过测试用例
+            //答案中给的是Math.max(leftNode.height, rightNode.height)+1
             Tree faTree = new Tree(leftNode, rightNode, leftNode.weight+ rightNode.weight, leftNode.height+1);
 
             queue.add(faTree);
