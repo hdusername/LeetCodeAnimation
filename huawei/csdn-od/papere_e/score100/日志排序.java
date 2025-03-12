@@ -67,3 +67,48 @@ public class 日志排序 {
         return ms;
     }
 }
+
+//标准答案
+//import java.io.*;
+//import java.util.Arrays;
+//import java.util.StringJoiner;
+//
+//public class Main {
+//    static class Log {
+//        String time;
+//        long timestamp;
+//
+//        public Log(String time) {
+//            this.time = time;
+//            this.timestamp = convert(time);
+//        }
+//    }
+//
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int n = Integer.parseInt(br.readLine());
+//
+//        Log[] logs = new Log[n];
+//        for (int i = 0; i < n; i++) {
+//            logs[i] = new Log(br.readLine());
+//        }
+//
+//        Arrays.sort(logs, (a, b) -> Long.compare(a.timestamp, b.timestamp));
+//
+//        StringJoiner sj = new StringJoiner("\n");
+//        for (Log log : logs) {
+//            sj.add(log.time);
+//        }
+//        System.out.println(sj);
+//    }
+//
+//    public static long convert(String log) {
+//        String[] tmp = log.split("[:.]");
+//        long H = Long.parseLong(tmp[0]) * 60 * 60 * 1000;
+//        long M = Long.parseLong(tmp[1]) * 60 * 1000;
+//        long S = Long.parseLong(tmp[2]) * 1000;
+//        long N = Long.parseLong(tmp[3]);
+//        return H + M + S + N;
+//    }
+//}
