@@ -95,3 +95,75 @@ public class 选修课 {
     }
 }
 
+//标准答案
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        // key为学生学号, value为该学生选修课程一的成绩
+//        HashMap<String, Integer> course1 = new HashMap<>();
+//        parse(sc.nextLine(), course1);
+//
+//        // key为学生学号, value为该学生选修课程二的成绩
+//        HashMap<String, Integer> course2 = new HashMap<>();
+//        parse(sc.nextLine(), course2);
+//
+//        // key为班级编号, value为该班级同时选修两门课程的学生学号集合
+//        HashMap<String, ArrayList<String>> classes = new HashMap<>();
+//
+//        // 找出同时选修了两门课程的学生学号
+//        for (String stuId : course1.keySet()) {
+//            if (course2.containsKey(stuId)) {
+//                // 班级编号(学号前五位)
+//                String classId = stuId.substring(0, 5);
+//
+//                // 该班级同时选修两门课程的学生学号集合
+//                classes.putIfAbsent(classId, new ArrayList<>());
+//                classes.get(classId).add(stuId);
+//            }
+//        }
+//
+//        // 如果没有同时选修两门选修课的学生输出NULL
+//        if (classes.isEmpty()) {
+//            System.out.println("NULL");
+//            return;
+//        }
+//
+//        // 先按照班级划分，班级编号小的先输出（班级编号字典序升序）
+//        classes.keySet().stream().sorted(String::compareTo).forEach(classId -> {
+//            classes.get(classId).sort((a, b) -> {
+//                int scoreA = course1.get(a) + course2.get(a);
+//                int scoreB = course1.get(b) + course2.get(b);
+//
+//                if (scoreA != scoreB) {
+//                    // 按照两门选修课成绩和的降序
+//                    return scoreB - scoreA;
+//                } else {
+//                    // 成绩和相同时按照学号升序
+//                    return a.compareTo(b);
+//                }
+//            });
+//
+//            // 先打印班级编号
+//            System.out.println(classId);
+//            // 再打印该班级中同时选修两门课程的学生学号
+//            System.out.println(String.join(";", classes.get(classId)));
+//        });
+//    }
+//
+//    public static void parse(String s, HashMap<String, Integer> course) {
+//        String[] students = s.split(";");
+//
+//        for (String student : students) {
+//            String[] info = student.split(",");
+//            String id = info[0];
+//            int score = Integer.parseInt(info[1]);
+//            course.put(id, score);
+//        }
+//    }
+//}
+
