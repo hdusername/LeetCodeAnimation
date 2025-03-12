@@ -89,3 +89,55 @@ public class 勾股数元组 {
         return a==1;
     }
 }
+//标准答案
+//import java.util.*;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int m = sc.nextInt();
+//
+//        Integer[] arr = new Integer[m - n + 1];
+//        for (int i = n; i <= m; i++) {
+//            arr[i - n] = i * i;
+//        }
+//
+//        HashSet<Integer> set = new HashSet<>();
+//        Collections.addAll(set, arr);
+//
+//        ArrayList<String> res = new ArrayList<>();
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = i + 1; j < arr.length; j++) {
+//                int sum = arr[i] + arr[j];
+//
+//                if (set.contains(sum)) {
+//                    int a = (int) Math.sqrt(arr[i]);
+//                    int b = (int) Math.sqrt(arr[j]);
+//                    int c = (int) Math.sqrt(sum);
+//
+//                    if (isRelativePrime(a, b) && isRelativePrime(a, c) && isRelativePrime(b, c)) {
+//                        res.add(a + " " + b + " " + c);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (res.isEmpty()) {
+//            System.out.println("NA");
+//        } else {
+//            res.forEach(System.out::println);
+//        }
+//    }
+//
+//    // 判断两个数是否互质，辗转相除
+//    public static boolean isRelativePrime(int x, int y) {
+//        while (y > 0) {
+//            int mod = x % y;
+//            x = y;
+//            y = mod;
+//        }
+//
+//        return x == 1;
+//    }
+//}
