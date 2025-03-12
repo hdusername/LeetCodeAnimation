@@ -89,3 +89,48 @@ public class 第k个排列 {
         }
     }
 }
+
+//标准答案
+//import java.util.*;
+//
+//public class Main {
+//    static int count = 0;
+//    static String ans = "";
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n = sc.nextInt();
+//        int k = sc.nextInt();
+//
+//        dfs(n, k, new boolean[n + 1], new LinkedList<>());
+//
+//        System.out.println(ans);
+//    }
+//
+//    public static boolean dfs(int n, int k, boolean[] used, LinkedList<String> path) {
+//        if (path.size() == n) {
+//            if (++count == k) {
+//                ans = String.join("", path);
+//            }
+//
+//            return count == k;
+//        }
+//
+//        for (int i = 1; i <= n; i++) {
+//            if (used[i]) continue;
+//
+//            used[i] = true;
+//            path.addLast(i + "");
+//
+//            if (dfs(n, k, used, path)) {
+//                return true;
+//            }
+//
+//            path.removeLast();
+//            used[i] = false;
+//        }
+//
+//        return false;
+//    }
+//}
