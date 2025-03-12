@@ -72,3 +72,81 @@ public class 选手前3名的编号 {
         System.out.println(stringJoiner);
     }
 }
+
+//标准答案
+//import java.util.*;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in).useDelimiter("[,\n]");
+//
+//        int m = sc.nextInt();
+//
+//        // m 范围校验
+//        if (m < 3 || m > 10) {
+//            System.out.println(-1);
+//            return;
+//        }
+//
+//        int n = sc.nextInt();
+//
+//        // n 范围校验
+//        if (n < 3 || n > 100) {
+//            System.out.println(-1);
+//            return;
+//        }
+//
+//        // countScore[i] 表示编号为 i 的选手的得分情况
+//        // countScore[i] 也是一个数组，长度为11, 数组索引 1 ~ 10 对应得分 1 ~ 10, 数组元素表示数组索引得分的数量
+//        int[][] countScore = new int[n + 1][11];
+//
+//        // sumScore[i] 表示编号 i 的选手的总分
+//        int[] sumScore = new int[n + 1];
+//
+//        for (int i = 0; i < m; i++) {
+//            for (int j = 1; j <= n; j++) {
+//                int score = sc.nextInt();
+//
+//                // 得分 范围校验
+//                if (score < 1 || score > 10) {
+//                    System.out.println(-1);
+//                    return;
+//                }
+//
+//                // 编号 j 的选手, 得分score的数量+1
+//                countScore[j][score]++;
+//                // 编号 j 的选手, 总分+score
+//                sumScore[j] += score;
+//            }
+//        }
+//
+//        // 1~n的选手编号集合
+//        ArrayList<Integer> nums = new ArrayList<>();
+//        for (int i = 1; i <= n; i++) {
+//            nums.add(i);
+//        }
+//
+//        // 记录结果
+//        StringJoiner sj = new StringJoiner(",");
+//
+//        // 编号排序
+//        nums.stream().sorted((i, j) -> {
+//            // 总分越高, 则排名越靠前
+//            if (sumScore[i] != sumScore[j]) {
+//                return sumScore[j] - sumScore[i];
+//            }
+//
+//            // 总分相同，则高分数量越多，则排名越靠前
+//            // 从10分数量开始比较
+//            for (int score = 10; score >= 1; score--) {
+//                if (countScore[i][score] != countScore[j][score]) {
+//                    return countScore[j][score] - countScore[i][score];
+//                }
+//            }
+//
+//            return 0;
+//        }).limit(3).forEach(num -> sj.add(num + "")); // 只选取前3名
+//
+//        System.out.println(sj);
+//    }
+//}
