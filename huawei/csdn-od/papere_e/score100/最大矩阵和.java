@@ -104,3 +104,54 @@ public class 最大矩阵和 {
         }
 
 }
+
+//标准答案
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n = sc.nextInt();
+//        int m = sc.nextInt();
+//
+//        int[][] matrix = new int[n][m];
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                matrix[i][j] = sc.nextInt();
+//            }
+//        }
+//
+//        int ans = Integer.MIN_VALUE;
+//
+//        for (int i = 0; i < n; i++) {
+//            ans = Math.max(ans, maxSubArraySum(matrix[i])); // 单行(第i行)子矩阵最大和
+//
+//            for (int j = i + 1; j < n; j++) { // 将第 i+1 ~ n-1 行依次合并入第 i 行
+//
+//                for (int k = 0; k < m; k++) {  // 矩阵压缩
+//                    matrix[i][k] += matrix[j][k];
+//                }
+//
+//                ans = Math.max(ans, maxSubArraySum(matrix[i])); // 多行子矩阵最大和
+//            }
+//        }
+//
+//        System.out.println(ans);
+//    }
+//
+//    // 最大子数组和求解
+//    public static int maxSubArraySum(int[] nums) {
+//        int dp = nums[0];
+//        int res = dp;
+//
+//        for (int i = 1; i < nums.length; i++) {
+//            dp = Math.max(dp, 0) + nums[i];
+//            res = Math.max(res, dp);
+//        }
+//
+//        return res;
+//    }
+//}
