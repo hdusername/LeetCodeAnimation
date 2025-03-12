@@ -68,3 +68,87 @@ public class 整数编码 {
         System.out.println(stringBuilder);
     }
 }
+
+//标准答案 字符串解析
+//import java.math.BigInteger;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+////        System.out.println(getResult(sc.nextLong()));
+//        System.out.println(getResult(sc.nextBigInteger()));
+//    }
+//
+//    //    public static String getResult(long num) {
+//    public static String getResult(BigInteger num) {
+////        String bin = Long.toBinaryString(num);
+//        String bin = num.toString(2);
+//
+//        StringBuilder ans = new StringBuilder();
+//
+//        int end = bin.length();
+//        while (end - 7 > 0) {
+//            ans.append(getHexString("1" + bin.substring(end - 7, end)));
+//            end -= 7;
+//        }
+//
+//        if (end >= 0) {
+//            ans.append(getHexString(bin.substring(0, end)));
+//        }
+//
+//        return ans.toString();
+//    }
+//
+//    public static String getHexString(String binStr) {
+//        String hexStr = Integer.toHexString(Integer.parseInt(binStr, 2));
+//        if (hexStr.length() == 1) hexStr = "0" + hexStr;
+//        return hexStr.toUpperCase();
+//    }
+//}
+
+//标准答案2 位运算
+//import java.math.BigInteger;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+////        long num = sc.nextLong();
+//        BigInteger num = sc.nextBigInteger();
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        do {
+//            // 编码时7位一组，每个字节的低7位用于存储待编码数字的补码
+////            long lowBit = num & 0b01111111; // 按位与运算, 获取 num 的低7位
+//            BigInteger lowBit = num.and(new BigInteger("1111111", 2));
+//
+//            // lowBit的最高位表示后续是否还有字节，置1表示后面还有更多的字节，置0表示当前字节为最后一个字节。
+////            if (num >> 7 > 0) { // num 右移7位后, 若结果大于0, 则说明后面还有字节
+////                lowBit |= 0b10000000; // 按位或运算, 将lowBit最高位置1
+////            }
+//            if (num.shiftRight(7).compareTo(new BigInteger("0")) > 0) {
+//                lowBit = lowBit.or(new BigInteger("10000000", 2));
+//            }
+//
+//            // 编码结果按16进制数的字符格式输出，小写字母需转换为大写字母
+////            String hex = Long.toHexString(lowBit).toUpperCase();
+//            String hex = lowBit.toString(16).toUpperCase();
+//
+//            if (hex.length() == 1) {
+//                hex = "0" + hex;
+//            }
+//
+//            sb.append(hex);
+//
+//            // 右移运算移除num的低七位
+////            num >>= 7;
+//            num = num.shiftRight(7);
+////        } while (num != 0);
+//        } while (num.compareTo(new BigInteger("0")) != 0);
+//
+//        System.out.println(sb);
+//    }
+//}
