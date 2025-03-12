@@ -69,3 +69,56 @@ public class 磁盘容量排序 {
         return sum;
     }
 }
+
+//标准答案
+//import java.util.*;
+//import java.util.regex.Matcher;
+//import java.util.regex.Pattern;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n = sc.nextInt();
+//
+//        String[] disks = new String[n];
+//        for (int i = 0; i < n; i++) {
+//            disks[i] = sc.next();
+//        }
+//
+//        // 指定了自定义比较器后, Arrays.sort就是稳定排序
+//        Arrays.sort(disks, (a, b) -> {
+//            return Long.compare(calc(a), calc(b));
+//        });
+//
+//        for (String disk : disks) {
+//            System.out.println(disk);
+//        }
+//    }
+//
+//    public static Long calc(String disk) {
+//        Matcher matcher = Pattern.compile("(\\d+)([MGT])").matcher(disk);
+//
+//        long ans = 0;
+//
+//        while (matcher.find()) {
+//            long m = Long.parseLong(matcher.group(1));
+//            String v = matcher.group(2);
+//
+//            switch (v) {
+//                case "M":
+//                    ans += m;
+//                    break;
+//                case "G":
+//                    ans += m * 1024;
+//                    break;
+//                case "T":
+//                    ans += m * 1024 * 1024;
+//                    break;
+//            }
+//        }
+//
+//        return ans;
+//    }
+//}
+//
