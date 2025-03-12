@@ -55,3 +55,45 @@ public class 免单统计 {
         System.out.println(count);
     }
 }
+
+//标准答案
+//import java.util.Arrays;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n = Integer.parseInt(sc.nextLine());
+//
+//        String[] times = new String[n];
+//        for (int i = 0; i < n; i++) {
+//            times[i] = sc.nextLine();
+//        }
+//
+//        // 时间升序
+//        Arrays.sort(times);
+//
+//        // 免单顾客数量
+//        int ans = 1;
+//
+//        // 当前秒的最早时刻
+//        String last = times[0];
+//        String lastSecond = last.substring(0, 19);
+//
+//        for (int i = 1; i < n; i++) {
+//            String cur = times[i];
+//            String curSecond = cur.substring(0, 19);
+//
+//            // 同一时刻 或者 不是同一秒
+//            if (cur.equals(last) || !curSecond.equals(lastSecond)) {
+//                ans++;
+//
+//                last = cur;
+//                lastSecond = curSecond;
+//            }
+//        }
+//
+//        System.out.println(ans);
+//    }
+//}
