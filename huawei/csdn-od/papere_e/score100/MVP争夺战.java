@@ -111,3 +111,61 @@ public class MVP争夺战 {
         return false;
     }
 }
+
+//标准答案
+//import java.util.Arrays;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        int t = sc.nextInt();
+//
+//        Integer[] nums = new Integer[t];
+//        int sum = 0; // 总分
+//
+//        for (int i = 0; i < t; i++) {
+//            nums[i] = sc.nextInt();
+//            sum += nums[i];
+//        }
+//
+//        // 降序
+//        Arrays.sort(nums, (a, b) -> b - a);
+//
+//        // 平分人数k，k越大，每个人得分越少
+//        for (int k = t; k >= 1; k--) {
+//            // 总分可以平分为 k 份
+//            if (sum % k == 0) {
+//                int subSum = sum / k;
+//
+//                // k个桶（每个桶记录每个队员拿到的分数，每个队员都需要拿 subSum 分，不能多也不能少
+//                int[] buckets = new int[k];
+//
+//                // 若 nums 所有元素都可以放到 k 个桶，且每个桶都能装满
+//                if (partition(0, nums, buckets, subSum)) {
+//                    System.out.println(subSum);
+//                    return;
+//                }
+//            }
+//        }
+//    }
+//
+//    public static boolean partition(int index, Integer[] nums, int[] buckets, int subSum) {
+//        if (index == nums.length) return true;
+//
+//        int select = nums[index];
+//
+//        for (int i = 0; i < buckets.length; i++) {
+//            if (i > 0 && buckets[i] == buckets[i - 1]) continue;
+//
+//            if (select + buckets[i] <= subSum) {
+//                buckets[i] += select;
+//                if (partition(index + 1, nums, buckets, subSum)) return true;
+//                buckets[i] -= select;
+//            }
+//        }
+//
+//        return false;
+//    }
+//}
