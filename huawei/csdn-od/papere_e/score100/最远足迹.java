@@ -63,3 +63,47 @@ public class 最远足迹 {
         System.out.println(ans);
     }
 }
+
+//标准答案
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        String s = sc.nextLine();
+//
+//        int maxFar = 0;
+//        String ans = "(0,0)";
+//
+//        int l = 0;
+//        for (int i = 0; i < s.length(); i++) {
+//            char c = s.charAt(i);
+//
+//            if (c == '(') {
+//                l = i;
+//            } else if (c == ')') {
+//                String[] pos = s.substring(l + 1, i).split(",");
+//
+//                if (pos[0].startsWith("0") || pos[1].startsWith("0")) {
+//                    continue;
+//                }
+//
+//                int x = Integer.parseInt(pos[0]);
+//                int y = Integer.parseInt(pos[1]);
+//
+//                if (x <= 0 || x >= 1000 || y <= 0 || y >= 1000) {
+//                    continue;
+//                }
+//
+//                int far = x * x + y * y;
+//                if (far > maxFar) {
+//                    maxFar = far;
+//                    ans = "(" + x + "," + y + ")";
+//                }
+//            }
+//        }
+//
+//        System.out.println(ans);
+//    }
+//}
