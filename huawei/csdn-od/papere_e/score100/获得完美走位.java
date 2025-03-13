@@ -31,6 +31,7 @@ import java.util.Scanner;
 public class 获得完美走位 {
     /**
      * 本题可采用最小覆盖子串的算法进行求解,本题稍有不同的是使用的map保存的字符的数量
+     * 可以同步看下关联子串和最左侧冗余覆盖子串，虽然解法不同，但是思想类似
      * @param args
      */
     public static void main(String[] args) {
