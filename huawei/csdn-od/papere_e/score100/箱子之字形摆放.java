@@ -64,3 +64,31 @@ public class 箱子之字形摆放 {
     }
     
 }
+
+//标准答案
+//import java.util.ArrayList;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        String s = sc.next();
+//        int n = sc.nextInt();
+//
+//        ArrayList<ArrayList<String>> matrix = new ArrayList<>();
+//        for (int i = 0; i < n; i++) matrix.add(new ArrayList<>());
+//
+//        boolean reverse = true;
+//        for (int i = 0; i < s.length(); i++) {
+//            int k = i % n;
+//            if (k == 0) reverse = !reverse;
+//            if (reverse) k = n - 1 - k;
+//            matrix.get(k).add(s.charAt(i) + "");
+//        }
+//
+//        for (ArrayList<String> list : matrix) {
+//            System.out.println(String.join("", list));
+//        }
+//    }
+//}
