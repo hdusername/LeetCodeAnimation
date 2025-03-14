@@ -28,7 +28,7 @@ import java.util.Scanner;
 public class 学生方阵 {
 
     static String[][] matrix;
-    //不向后进行遍历,这几个方向是从上到下，从左到右
+    //不向后进行遍历,这几个方向是从上到下，从左到右，也就是说只走右、右下、下、左下几个位置，其他位置在遍历之前的元素时肯定已经遍历过了
     static int[][] offsets = {{1, -1},{0, 1},{1, 1},{1, 0}};
     static int m;
     static int n;
