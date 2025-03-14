@@ -51,6 +51,7 @@ public class 周末爬山 {
                 matrix[i][j] = scanner.nextInt();
             }
         }
+        //因为求得是最高的高度，只用这一个值即可表示，而智能驾驶中用dist_init、dist_remain来存储结果是因为需要存储到达每一个当前节点需要的最少初始油量和最多剩余油量
         int maxHeight = matrix[0][0];
         int minStep = 0;
 

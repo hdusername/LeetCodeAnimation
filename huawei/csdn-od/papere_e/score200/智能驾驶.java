@@ -87,6 +87,7 @@ public class 智能驾驶 {
         int[][] dist_remain = new int[m][n];
 
         // 起点（0,0）到达自身位置（0,0）所需的最少初始油量和最多剩余油量
+        // 可以同步看下周末爬山
         dist_init[0][0] = queue.peekFirst().initOil;
         dist_remain[0][0] = queue.peekFirst().remainOil;
 
