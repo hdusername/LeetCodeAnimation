@@ -84,7 +84,9 @@ public class 文本统计分析 {
                         //没到双引号的结尾或者是双引号中的双引号
                         stringBuffer.append(charArray[i]);
                     } else {
-                        //单双引号中的空字符、制表符不算空，所以要加进去以便最终放到anslist中
+                        //单双引号中的空字符、制表符不算空，所以要加进去这个单双引号当作这个空字符制表符等以便最终放到anslist中
+                        //例如用例'abc''abc';'';'	';' 	'
+                        //其实是有四个文本的
                         stringBuffer.append(charArray[i]);
                         isDubboOpen = false;
                     }
