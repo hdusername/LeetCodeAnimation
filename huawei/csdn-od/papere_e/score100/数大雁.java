@@ -87,3 +87,68 @@ public class 数大雁 {
         return flag;
     }
 }
+
+//标准答案
+//import java.util.ArrayList;
+//import java.util.LinkedList;
+//import java.util.Scanner;
+//
+//public class Main {
+//  public static void main(String[] args) {
+//    Scanner sc = new Scanner(System.in);
+//    String quack = sc.next();
+//    System.out.println(getResult(quack));
+//  }
+//
+//  public static int getResult(String quack) {
+//    LinkedList<Integer> q = new LinkedList<>();
+//
+//    int u = 0, a = 0, c = 0;
+//
+//    ArrayList<Integer[]> ranges = new ArrayList<>();
+//
+//    for (int i = 0; i < quack.length(); i++) {
+//      switch (quack.charAt(i)) {
+//        case 'q':
+//          q.add(i);
+//          break;
+//        case 'u':
+//          if (u + 1 <= q.size()) u++;
+//          break;
+//        case 'a':
+//          if (a + 1 <= u) a++;
+//          break;
+//        case 'c':
+//          if (c + 1 <= a) c++;
+//          break;
+//        case 'k':
+//          if (c >= 1) {
+//求出所有完整叫声索引范围，，比如quacqkuack，第二只鸭子的第一个叫声q在第一个鸭子叫声中，ranges记录的范围是0-5、4-9，那么在后续的循环比较中，就会比较5和4的值,5>=4
+//就会加一只鸭子count++
+//            ranges.add(new Integer[] {q.removeFirst(), i});
+//            u--;
+//            a--;
+//            c--;
+//          }
+//          break;
+//        default:
+//          return -1;
+//      }
+//    }
+//
+//    if (ranges.size() == 0) return -1;
+//
+//    int ans = 1;
+//    for (int i = 0; i < ranges.size(); i++) {
+//      int count = 1;
+//      for (int j = i + 1; j < ranges.size(); j++) {
+//        if (ranges.get(i)[1] >= ranges.get(j)[0]) {
+//          count++;
+//        }
+//      }
+//      ans = Math.max(ans, count);
+//    }
+//
+//    return ans;
+//  }
+//}
