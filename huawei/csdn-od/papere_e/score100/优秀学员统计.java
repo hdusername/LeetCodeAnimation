@@ -36,6 +36,7 @@ public class 优秀学员统计 {
                 int id = scanner.nextInt();
                 map.put(id, map.getOrDefault(id, 0)+1);
                 //放入第一次打卡的时机（索引）
+                //较早参与打卡的意思是按天来的，也就是第一天比第二天打卡早，同一天没有早晚之分，要通过id的大小来区分
                 firstMap.putIfAbsent(id, i);
             }
         }
