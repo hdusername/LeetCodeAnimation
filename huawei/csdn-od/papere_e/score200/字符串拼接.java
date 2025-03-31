@@ -53,7 +53,7 @@ public class 字符串拼接 {
             }
         }
 
-        //方便进行全排列时去重
+        //方便进行全排列时去重，这一步不要忘记
         Arrays.sort(charArray);
         //全排列算法
         isUsed = new boolean[charArray.length];
@@ -151,7 +151,7 @@ public class 字符串拼接 {
 //                // 相同的字符不能相邻， pre指向前面一个被选择的字符的在cArr中的位置，i指向当前被选择的字符在cArr中的位置
 //                if (pre >= 0 && cArr[i] == cArr[pre]) continue;
 //
-//                // 树层去重(去除重复排列)
+//                // 树层去重(去除重复排列)，求组合不用 !used[i - 1]这个条件，见《游戏分组》
 //                if (i > 0 && cArr[i] == cArr[i - 1] && !used[i - 1]) continue;
 //
 //                used[i] = true;

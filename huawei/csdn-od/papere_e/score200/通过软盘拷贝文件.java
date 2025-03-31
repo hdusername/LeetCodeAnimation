@@ -59,6 +59,7 @@ public class 通过软盘拷贝文件 {
             int dp_size_b = size_b[i-1];
             int dp_size_block = size_block[i-1];
 
+            //可以看一下《工作安排》对比下i、j的取值
             for(int j=1; j<total_block+1; j++){
                 if(dp_size_block>j){
                     dp[i][j] = dp[i-1][j];
